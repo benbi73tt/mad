@@ -14,7 +14,7 @@ public class Ex2 {
             public void run() {
                  {
                     //for(int i = 0;i < 10;i++)
-                    IntStream.range(0,10).forEach(i->b.incrementAndGet());
+                    IntStream.range(0,10).forEach(i -> b.incrementAndGet());
                 }
             }
         });
@@ -23,7 +23,7 @@ public class Ex2 {
             public void run() {
                 {
 
-                    IntStream.range(0,10).forEach(i->b.decrementAndGet());
+                    IntStream.range(0,10).forEach(i -> b.decrementAndGet());
 
                 }
             }
@@ -36,7 +36,7 @@ public class Ex2 {
 
         thread.join();
         thread2.join();
-        System.out.println(b);
+        System.out.println(b.intValue());
     }
 }
 

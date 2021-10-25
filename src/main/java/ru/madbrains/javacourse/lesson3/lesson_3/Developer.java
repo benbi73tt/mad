@@ -3,6 +3,8 @@ package ru.madbrains.javacourse.lesson3.lesson_3;
 
 import ru.madbrains.javacourse.lesson3.Employer;
 
+import java.util.Objects;
+
 public class Developer extends Employer<ITRole> {
     private String language;
 
@@ -30,5 +32,19 @@ public class Developer extends Employer<ITRole> {
                 " age = '" + this.getAge() + '\'' +
                 ", language = " + language +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if(!super.equals(o)) return false;
+        Developer developer = (Developer) o;
+        return Objects.equals(language, developer.language);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(super.hashCode(), language);
     }
 }

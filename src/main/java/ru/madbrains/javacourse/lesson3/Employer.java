@@ -1,6 +1,9 @@
 package ru.madbrains.javacourse.lesson3;
 
+import ru.madbrains.javacourse.lesson3.lesson_3.Developer;
 import ru.madbrains.javacourse.lesson3.lesson_3.Worker;
+
+import java.util.Objects;
 
 public abstract class Employer<T> implements Worker {
     private String name;
@@ -40,5 +43,19 @@ public abstract class Employer<T> implements Worker {
 
     public void setRole(T role) {
         this.role = role;
+    }
+
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employer<?> employer = (Employer<?>) o;
+        return age == employer.age && Objects.equals(name,employer.name) && Objects.equals(role, employer.role);
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(name, age, role);
     }
 }
