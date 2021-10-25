@@ -73,12 +73,12 @@ public class Example {
                 .map(Developer::getName)
                 .forEach(System.out::println); //вывод всех по очереди
 
-        System.out.println("\n");
-        developers.stream()
-                .sorted(comparator)
-                .map(Developer::getName)
-                .limit(3)
-                .forEach(System.out::println);
+//        System.out.println("\n");
+//        developers.stream()
+//                .sorted(comparator)
+//                .map(Developer::getName)
+//                .limit(3)
+//                .forEach(System.out::println);
     }
 
 }
